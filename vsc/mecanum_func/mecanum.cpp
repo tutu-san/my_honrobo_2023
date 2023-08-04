@@ -1,10 +1,15 @@
+//オムニホイールの計算をする
+//power_rate に 0~1 割合で結果を返す
+//→ 別のところで、設定した最高速度との掛け算で速度決定し、 pi(d)制御を使いながらでモーターを回したい。
+//(そんな考え方で大丈夫なのかは、わからない)
+
 #include <array>
 #include <cmath>
 #include <cstdio>
 
 float mecanum_calc(float, float, float*);
 
-//計算式チェック用
+//for check
 int main(){
     float motor_rate[4];
 
@@ -30,7 +35,9 @@ float mecanum_calc(float x, float y, float* power_rate) {
 
     rad_s = v / r;  // v = r * ωより
 
-    //メカナムの式
+    //メカナムの式( https://sgrsn1711.hatenablog.com/entry/2019/01/13/002459 より)
+
+    //これであってるのだろうか?
     std::array<std::array<float, 3>, 4> meca_4{{
         {1.0f, 1.0f, l}, //1
         {-1.0f, 1.0f, l}, //2
