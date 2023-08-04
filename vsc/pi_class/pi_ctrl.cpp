@@ -1,3 +1,5 @@
+//pi(d)せいぎょをしたいあれ
+
 #include "pi_ctrl.hpp"
 
 // 単位は(rad/s)
