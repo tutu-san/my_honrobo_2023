@@ -8,7 +8,7 @@ float mecanum_calc(float, float, float*);
 int main(){
     float motor_rate[4];
 
-    mecanum_calc(0, 0, motor_rate);
+    mecanum_calc(40, 0, motor_rate);
 
     return 0;
 }
@@ -32,9 +32,9 @@ float mecanum_calc(float x, float y, float* power_rate) {
 
     //メカナムの式
     std::array<std::array<float, 3>, 4> meca_4{{
-        {1.0f, -1.0f, l}, //1
+        {1.0f, 1.0f, l}, //1
         {-1.0f, 1.0f, l}, //2
-        {-1.0f, 1.0f, l}, //3
+        {-1.0f, -1.0f, l}, //3
         {1.0f, -1.0f, l}, //4
     }};
 
