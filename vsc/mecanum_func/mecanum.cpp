@@ -8,7 +8,7 @@ float mecanum_calc(float, float, float*);
 int main(){
     float motor_rate[4];
 
-    mecanum_calc(40, 0, motor_rate);
+    mecanum_calc(-128, 127, motor_rate);
 
     return 0;
 }
